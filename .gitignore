@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+# Personal exports and generated reports stay local.
+data/
+reports/
+StreamingHistory*.json
+Streaming_History*.json
