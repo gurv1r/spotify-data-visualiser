@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spotify-data-visualiser"
+version = "2.0.0"
+description = "A local, auditable analytics pipeline for Spotify streaming exports"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+spotify-viz = "spotify_visualiser.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["spotify_visualiser*"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+
+[tool.ruff.lint.per-file-ignores]
+# Embedded HTML/CSS is kept readable as template markup.
+"spotify_visualiser/report.py" = ["E501"]
